@@ -10,15 +10,15 @@ import {
 
 export default function VideoUploadPage() {
     return (
-        <div className="flex items-center justify-center h-screen bg-green-200">
-            <Card className="w-96 bg-gray-100 p-5">
-                <CardHeader className=' p-2'>
-                    <Typography variant="h4" className=' p-10'>
-                        UI/UX Review Check
+        <div className="flex items-center justify-center h-screen ">
+            <Card className="w-150 bg-gray-100 p-5 rounded-lg">
+                <CardHeader >
+                    <Typography variant="h4" className=' p-8'>
+                        Choose the video input type
                     </Typography>
                 </CardHeader>
 
-                <CardBody>
+                <CardBody className=' p-5'>
                     <div className="flex items-center mb-4">
                         <input
                             id="default-radio-1"
@@ -51,8 +51,8 @@ export default function VideoUploadPage() {
                     </div>
                 </CardBody>
 
-                <CardFooter className="pt-4">
-                    <Button>Submit</Button>
+                <CardFooter className="pt-4 self-end">
+                    <button type="button" class="text-white bg-green-700 hover:bg-green-800 focus:outline-none focus:ring-4 focus:ring-green-300 font-medium rounded-full text-sm px-5 py-2.5 text-center me-2 mb-2 dark:bg-green-600  ">Green</button>
                 </CardFooter>
             </Card>
         </div>
