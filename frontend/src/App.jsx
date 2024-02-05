@@ -1,22 +1,24 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Dashbord from './pages/dashbord';
-import VideoUploadPage from './pages/VideoUploadPage';
-import VideoUploadPageeee from './pages/VideoUploadPageeee';
-
+import React from 'react'
+import Navbar from './assets/components/Navbar'
+import { Route, Routes } from 'react-router-dom'
+import Home from './assets/pages/Home'
+import Reports from './assets/pages/Reports'
+import GetCount from './assets/pages/GetCount'
 
 const App = () => {
   return (
-    <div className='bg-green-200'>
-      <BrowserRouter>
+    <>
+      <Navbar />
+      <div className='bg-[#f3e4e4] w-full h-screen pt-20'>
         <Routes>
-          <Route path="/" element={<Dashbord />} />
-          <Route path="/videoUploadPage" element={<VideoUploadPage />} />
-          <Route path="/uploadPage" element={<VideoUploadPageeee />} />
+          <Route path='/' element={<Home />} />
+          <Route path='/home' element={<Home />} />
+          <Route path='/reports' element={<Reports />} />
+          <Route path='/get-count' element={<GetCount />} />
         </Routes>
-      </BrowserRouter>
-    </div>
-  );
-};
+      </div>
+    </>
+  )
+}
 
 export default App;
