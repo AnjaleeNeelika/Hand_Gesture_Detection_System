@@ -8,7 +8,7 @@ const Navbar = () => {
     return (
         <div className='w-full shadow-md fixed top-0 left-0 flex'>
             <div className='md:flex justify-between items-center bg-white py-4 md:px-10 px-7 w-full'>
-                <div className='md:flex justify-between items-center font-bold text-3xl text-[#3e3232]'>
+                <div className='md:flex justify-between items-center font-bold text-3xl text-[#776666]'>
                     <span className='text-3xl mr-1 pt-2'>
                         <ion-icon name="logo-ionic"></ion-icon>
                     </span>
@@ -27,7 +27,7 @@ const Navbar = () => {
                         <Link to="/reports">REPORTS</Link>
                     </li>
                     <li className='text-[#3e3232] hover:text-[#a87c7c] md:my-0 my-7'>
-                        <Link to="/get-count">GET COUNT</Link>
+                        <Link to="/start-count">START COUNTING</Link>
                     </li>
 
                     <div className='flex gap-10 md:ml-5'>
@@ -36,9 +36,6 @@ const Navbar = () => {
                     </div>                
                 </ul>
             </div>
-            
-
-            
         </div>
     )
 }

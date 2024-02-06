@@ -2,7 +2,7 @@ import React from 'react'
 
 const Reports = () => {
     return (
-        <div>Reports</div>
+        <div className='h-full p-5'>Reports</div>
     )
 }
 
