@@ -7,6 +7,8 @@ import VideoUploadPage from './pages/VideoUploadPage'
 import VideoUploadPageeee from './pages/VideoUploadPageeee'
 import StartCounting from './pages/StartCounting'
 import PointInput from './pages/PointInput'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
 
 const App = () => {
   return (
@@ -21,6 +23,8 @@ const App = () => {
                 <Route path='/videoUploadPage' element={<VideoUploadPage />} />
                 <Route path='/uploadVideo' element={<VideoUploadPageeee />} />
                 <Route path='/input-points' element={<PointInput />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
             </Routes>
         </div>
     </>
