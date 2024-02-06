@@ -1,8 +1,11 @@
 import React from 'react'
+import VideoUploadPage from './VideoUploadPage'
 
 const StartCounting = () => {
     return (
-        <div className='h-full p-5'>StartCounting</div>
+        <div className='h-full p-5'>
+            <VideoUploadPage />
+        </div>
     )
 }
 

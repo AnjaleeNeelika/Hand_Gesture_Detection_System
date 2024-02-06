@@ -31,8 +31,12 @@ const Navbar = () => {
                     </li>
 
                     <div className='flex gap-10 md:ml-5'>
-                        <Button1>Login</Button1>
-                        <Button1>Signup</Button1>
+                        <Button1>
+                            <Link to='/login'>Login</Link>
+                        </Button1>
+                        <Button1>
+                            <Link to='/signup'>Signup</Link>
+                        </Button1>
                     </div>                
                 </ul>
             </div>
