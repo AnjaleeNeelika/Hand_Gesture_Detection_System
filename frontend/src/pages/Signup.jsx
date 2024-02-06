@@ -11,9 +11,9 @@ const Signup = () => {
                     <div className='input-wrapper w-full'>
                         <InputText label='Full Name' type='text' />
                     </div>
-                    <div className='input-wrapper w-full mt-5'>
+                    {/* <div className='input-wrapper w-full mt-5'>
                         <InputText label='Position' type='text' />
-                    </div>
+                    </div> */}
                     <div className='input-wrapper w-full mt-5'>
                         <InputText label='Email Address' type='text' />
                     </div>
@@ -24,7 +24,7 @@ const Signup = () => {
                         <InputText label='Confirm Password' type='password' />
                     </div>
                     <div className='mt-8'>
-                        <Button2>Login</Button2>
+                        <Button2>Signup</Button2>
                     </div>                    
                 </form>
             </div>
