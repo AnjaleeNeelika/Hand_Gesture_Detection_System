@@ -13,6 +13,7 @@ import Login from './pages/Login'
 import Signup from './pages/Signup'
 import LiveVideo from './pages/LiveVideo'
 import UploadVideo from './pages/UploadVideo'
+import ThresholdValue from './pages/ThresholdValue'
 
 const App = () => {
   return (
@@ -32,6 +33,7 @@ const App = () => {
           <Route path='/live-video' element={<LiveVideo />} />
           <Route path='/upload-video' element={<UploadVideo />} />
           <Route path='/action-count-input' element={<ActionCountInput />} />
+          <Route path='/threshold-value' element={<ThresholdValue />} />
         </Routes>
       </div>
     </>
