@@ -9,6 +9,10 @@ import VideoUploadPageeee from './pages/VideoUploadPageeee'
 import StartCounting from './pages/StartCounting'
 import PointInput from './pages/PointInput'
 import ActionCountInput from './pages/ActionCountInput'
+import Login from './pages/Login'
+import Signup from './pages/Signup'
+import LiveVideo from './pages/LiveVideo'
+import UploadVideo from './pages/UploadVideo'
 
 const App = () => {
   return (
@@ -23,7 +27,10 @@ const App = () => {
           <Route path='/videoUploadPage' element={<VideoUploadPage />} />
           <Route path='/uploadVideo' element={<VideoUploadPageeee />} />
           <Route path='/input-points' element={<PointInput />} />
-          <Route path='/action-count-input' element={<ActionCountInput />} />
+          <Route path='/login' element={<Login />} />
+          <Route path='/signup' element={<Signup />} />
+          <Route path='/live-video' element={<LiveVideo />} />
+          <Route path='/upload-video' element={<UploadVideo />} />
         </Routes>
       </div>
     </>
