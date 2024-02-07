@@ -1,12 +1,22 @@
 import React from 'react';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import InputText from '../assets/components/InputText';
+import { Link } from 'react-router-dom';
 
 const LiveVideo = () => {
     return (
         <div className='h-full p-5'>
             <div className='flex items-center gap-3 fixed'>
-                <BsFillArrowLeftCircleFill className='text-3xl text-[#b87d7d]' /> 
+                <Link
+                    to={{
+                        pathname: '../start-count'
+                    }}
+                >
+                    <button>
+                        <BsFillArrowLeftCircleFill className='text-3xl text-[#b87d7d]' /> 
+                    </button>                    
+                </Link>
+                
                 <span className='text-lg text-[#b87d7d]'>Back</span>
             </div>
             <div className='pt-10 p-5 w-full-full'>
