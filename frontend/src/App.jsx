@@ -31,6 +31,7 @@ const App = () => {
           <Route path='/signup' element={<Signup />} />
           <Route path='/live-video' element={<LiveVideo />} />
           <Route path='/upload-video' element={<UploadVideo />} />
+          <Route path='/action-count-input' element={<ActionCountInput />} />
         </Routes>
       </div>
     </>
