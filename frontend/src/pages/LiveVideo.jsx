@@ -2,6 +2,7 @@ import React from 'react';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import InputText from '../assets/components/InputText';
 import { Link } from 'react-router-dom';
+import NumericTextbox from '../assets/components/NumericTextbox';
 
 const LiveVideo = () => {
     return (
@@ -31,7 +32,8 @@ const LiveVideo = () => {
                         </span>
                         <div className='bg-white py-3 px-5 flex justify-center items-center gap-5 mt-3 rounded-md'>
                             <span className='text-lg'>Select video duration to download (max. 20min)</span>
-                            <InputText type='dropdown' />
+                            {/* add a numeric textbox */}
+                            <NumericTextbox />
                         </div>
                     </div>                    
                 </div>
