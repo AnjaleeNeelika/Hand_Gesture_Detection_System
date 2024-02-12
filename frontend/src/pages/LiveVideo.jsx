@@ -31,7 +31,8 @@ const LiveVideo = () => {
                         </span>
                         <div className='bg-white py-3 px-5 flex justify-center items-center gap-5 mt-3 rounded-md'>
                             <span className='text-lg'>Select video duration to download (max. 20min)</span>
-                            <InputText type='dropdown' />
+                            {/* add a numeric textbox */}
+                            <input type="number" name="" id="" min="1" max="20" className='border border-[#ddd] focus:border-[#ca9a9a] outline-none px-4 py-2 rounded' />
                         </div>
                     </div>                    
                 </div>
