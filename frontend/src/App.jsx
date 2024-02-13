@@ -20,21 +20,21 @@ const App = () => {
     <>
       <Navbar />
       <div className='bg-[#f3e4e4] w-full h-screen pt-20'>
-        <Routes>
-          <Route path='/' element={<Home />} />
-          <Route path='/home' element={<Home />} />
-          <Route path='/reports' element={<Reports />} />
-          <Route path='/start-count' element={<StartCounting />} />
-          <Route path='/videoUploadPage' element={<VideoUploadPage />} />
-          <Route path='/uploadVideo' element={<VideoUploadPageeee />} />
-          <Route path='/input-points' element={<PointInput />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/signup' element={<Signup />} />
-          <Route path='/live-video' element={<LiveVideo />} />
-          <Route path='/upload-video' element={<UploadVideo />} />
-          <Route path='/action-count-input' element={<ActionCountInput />} />
-          <Route path='/threshold-value' element={<ThresholdValue />} />
-        </Routes>
+            <Routes>
+                <Route path='/' element={<Home />} />
+                <Route path='/home' element={<Home />} />
+                <Route path='/reports' element={<Reports />} />
+                <Route path='/start-count' element={<StartCounting />} />
+                <Route path='/videoUploadPage' element={<VideoUploadPage />} />
+                <Route path='/uploadVideo' element={<VideoUploadPageeee />} />
+                <Route path='/input-points' element={<PointInput />} />
+                <Route path='/login' element={<Login />} />
+                <Route path='/signup' element={<Signup />} />
+                <Route path='/live-video' element={<LiveVideo />} />
+                <Route path='/upload-video' element={<UploadVideo />} />
+                <Route path='/action-count-input' element={<ActionCountInput />} />
+                <Route path='/threshold-value' element={<ThresholdValue />} />
+            </Routes>
       </div>
     </>
   )
