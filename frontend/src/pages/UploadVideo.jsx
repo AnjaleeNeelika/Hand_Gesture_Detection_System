@@ -27,7 +27,9 @@ const UploadVideo = () => {
                         <div>
                             <VideoUploader />
                             <div className='mt-5 w-fit mx-auto'>
-                                <button className='bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Submit</button>
+                                <Link to='/action-count-input'>
+                                    <button className='bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Submit</button>
+                                </Link>
                             </div>
                         </div>
                         
