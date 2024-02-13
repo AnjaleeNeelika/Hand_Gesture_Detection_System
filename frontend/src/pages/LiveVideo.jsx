@@ -34,8 +34,11 @@ const LiveVideo = () => {
                             {/* add a numeric textbox */}
                             <input type="number" name="" id="" min="1" max="20" className='border border-[#ddd] focus:border-[#ca9a9a] outline-none px-4 py-2 rounded' />
                         </div>
-                        <div className='mt-5 w-fit mx-auto'>
-                            <button className='bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Download</button>
+                        <div className='mt-5 flex w-fit mx-auto gap-10'>
+                            <button className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Download</button>
+                            <Link to='/action-count-input'>
+                                <button className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Start</button>
+                            </Link>
                         </div>
                     </div>                    
                 </div>
