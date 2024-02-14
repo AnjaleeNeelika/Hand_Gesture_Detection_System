@@ -1,0 +1,1 @@
+ # cv2.putText(img, f"Count: {counter}, Stage: {stage}", (10, 50), cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 255, 255), 2)
