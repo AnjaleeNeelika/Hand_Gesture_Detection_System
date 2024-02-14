@@ -34,17 +34,18 @@ const ThresholdValue = () => {
         <div class='h-full p-5 flex flex-col justify-center items-center'>
             <div class='flex flex-1 mt-1 h-3/4 w-full'>
 
-                <div class='w-1/2 mr-2 mt-3 justify-center'>
+                <div class='w-1/2 mr-2 mt-3 flex justify-center items-center'>
                     <div className=''>
                         <video class="w-full h-auto object-cover shadow-lg" autoplay loop controls muted>
                             <source src="https://tecdn.b-cdn.net/img/video/Sail-Away.mp4" type="video/mp4" />
                         </video>
+                        <div className=' p-11 flex justify-center'>
+                            <button className=" bg-[#7e6363] py-2 px-5 text-white rounded flex justify-center p-11" onClick={openModel}>
+                                See Points
+                            </button>
+                        </div>
                     </div>
-                    <div className=' p-11 flex justify-center'>
-                        <button className=" bg-[#7e6363] py-2 px-5 text-white rounded flex justify-center p-11" onClick={openModel}>
-                            See Points
-                        </button>
-                    </div>
+                    
                     <Model isVisible={isModelVisible} onClose={closeModel} />
                 </div>
 
@@ -58,13 +59,13 @@ const ThresholdValue = () => {
                                 </div>
                                 <div className='flex flex-row'>
                                     <div className='mb-2 mr-2'>
-                                        <input type='number' id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
+                                        <input type='number' id="number" min={0} max={360} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
                                     </div>
                                     <div className='mb-2 mr-2'>
-                                        <input type='number' id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
+                                        <input type='number' id="number" min={0} max={360} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
                                     </div>
                                     <div className='mb-2 mr-2'>
-                                        <input type='number' id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
+                                        <input type='number' id="number" min={0} max={360} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
                                     </div>
                                 </div>
                             </div>
@@ -75,13 +76,13 @@ const ThresholdValue = () => {
                                 </div>
                                 <div className='flex flex-row'>
                                     <div className='mb-2 mr-2'>
-                                        <input type='number' id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
+                                        <input type='number' id="number" min={0} max={360} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
                                     </div>
                                     <div className='mb-2 mr-2'>
-                                        <input type='number' id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
+                                        <input type='number' id="number" min={0} max={360} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
                                     </div>
                                     <div className='mb-2 mr-2'>
-                                        <input type='number' id="number" className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
+                                        <input type='number' id="number" min={0} max={360} className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Number of actions" required />
                                     </div>
                                 </div>
                             </div>
