@@ -1,8 +1,23 @@
-import React from 'react';
+import { React, useState, useEffect, useRef } from 'react';
 import Button2 from '../assets/components/Button2';
 import { Link } from 'react-router-dom';
+import axios from 'axios';
+
 
 const ActionCountInput = () => {
+    const [videoSrc, setVideoSrc] = useState(null);
+
+    useEffect(() => {
+        import("../assets/videos/sample-vid.mp4")
+            .then((module) => {
+                setVideoSrc(module.default);
+            })
+            .catch((error) => {
+                console.error("Error loading video:", error);
+            });
+    }, []);
+
+
     return (
         <div className='h-full p-5 flex flex-col justify-center items-center'>
 
@@ -10,11 +25,11 @@ const ActionCountInput = () => {
             <div className='flex mt-1 h-3/8 items-center'>
                 {/* Left Side - Video */}
                 <div className='w-1/2 mr-2 h-fit shadow-lg'>
-                    <video className="w-auto h-full shadow-lg" autoPlay loop controls muted>
-                        <source
-                            src="https://tecdn.b-cdn.net/img/video/Sail-Away.mp4"
-                            type="video/mp4" />
-                    </video>
+                    {videoSrc && (
+                        <video className="w-auto h-full shadow-lg" autoPlay loop controls muted>
+                            <source src={videoSrc} type="video/mp4" />
+                        </video>
+                    )}
                 </div>
                 {/* Right Side - Form */}
                 <div className='w-1/2 mr-2 flex items-center justify-center'>
