@@ -21,7 +21,6 @@ const ActionCountInput = () => {
     return (
 
         <div className='h-full p-5 flex flex-col justify-center items-center'>
-
             {/* Top Section */}
             <div className='flex mt-1 h-3/8 items-center'>
                 {/* Left Side - Video */}
@@ -48,7 +47,7 @@ const ActionCountInput = () => {
                 </div>
 
             </div>
-            <form className='min-w-[200px] w-[400px] bg-white p-11 rounded-lg shadow-lg'> 
+            <form className='min-w-[200px] w-[400px] bg-white p-11 rounded-lg shadow-lg'>
                 <div className='flex justify-center items-end gap-10 w-full'>
                     <div className=''>
                         <label htmlFor="number" className="block mb-2 text-sm font-medium text-gray-900 ">Number of Actions</label>

@@ -14,10 +14,10 @@ const UploadVideo = () => {
                     }}
                 >
                     <button>
-                        <BsFillArrowLeftCircleFill className='text-3xl text-[#b87d7d]' /> 
-                    </button>                    
+                        <BsFillArrowLeftCircleFill className='text-3xl text-[#b87d7d]' />
+                    </button>
                 </Link>
-                
+
                 <span className='text-lg text-[#b87d7d]'>Back</span>
             </div>
             <div className='pt-10 p-5 w-full h-full'>
@@ -32,10 +32,10 @@ const UploadVideo = () => {
                                 </Link>
                             </div>
                         </div>
-                        
-                    </div>                    
+
+                    </div>
                 </div>
-                
+
             </div>
         </div>
     )
