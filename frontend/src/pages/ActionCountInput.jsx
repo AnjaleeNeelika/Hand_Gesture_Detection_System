@@ -1,8 +1,11 @@
 import React from 'react';
 import Button2 from '../assets/components/Button2';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const ActionCountInput = () => {
+    const [searchParams] = useSearchParams();
+    console.log(searchParams.get("type"));
+
     return (
         <div className='h-full p-5 flex justify-center items-center gap-10'>
             <div className='min-w-[300px] w-[800px] h-fit bg-white'>
