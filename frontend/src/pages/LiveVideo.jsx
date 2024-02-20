@@ -15,7 +15,7 @@ const LiveVideo = () => {
     };
 
     return (
-        <div className='h-full p-5'>
+        <div className='h-full p-5 overflow-auto'>
             <div className='flex items-center gap-3 fixed'>
                 <Link
                     to={{
@@ -23,10 +23,10 @@ const LiveVideo = () => {
                     }}
                 >
                     <button>
-                        <BsFillArrowLeftCircleFill className='text-3xl text-[#b87d7d]' /> 
-                    </button>                    
+                        <BsFillArrowLeftCircleFill className='text-3xl text-[#b87d7d]' />
+                    </button>
                 </Link>
-                
+
                 <span className='text-lg text-[#b87d7d]'>Back</span>
             </div>
             <div className='pt-10 p-5 w-full-full'>
@@ -48,7 +48,7 @@ const LiveVideo = () => {
                             <button className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Download</button>
                             <button onClick={nextPageNav} className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Start</button>
                         </div>
-                    </div>                    
+                    </div>
                 </div>
             </div>
         </div>

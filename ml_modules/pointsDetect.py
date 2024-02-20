@@ -58,13 +58,6 @@ def angle(lmlist, points,side, drawpoints):
                 elif side == 14:
                     cv2.putText(img, f"Left Elbow Angle: {ang:.2f}", (midpoint_x, midpoint_y), cv2.FONT_HERSHEY_SIMPLEX, 0.5, (255, 255, 255), 2)
 
-
-
-
-
-
-           
-
            
 #         #    # Curl counter logic
 #         #     if left_angle > 100:
