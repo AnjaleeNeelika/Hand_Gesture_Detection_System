@@ -1,9 +1,19 @@
 import React from 'react';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
 import InputText from '../assets/components/InputText';
-import { Link } from 'react-router-dom';
+import { Link, createSearchParams, useNavigate } from 'react-router-dom';
 
 const LiveVideo = () => {
+    const navigate = useNavigate();
+    const nextPageNav = (type) => {
+        navigate({
+            pathname: "/action-count-input",
+            search: createSearchParams({
+                type: "live"
+            }).toString()
+        });
+    };
+
     return (
         <div className='h-full p-5 overflow-auto'>
             <div className='flex items-center gap-3 fixed'>
@@ -36,9 +46,7 @@ const LiveVideo = () => {
                         </div>
                         <div className='mt-5 flex w-fit mx-auto gap-10'>
                             <button className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Download</button>
-                            <Link to='/action-count-input'>
-                                <button className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Start</button>
-                            </Link>
+                            <button onClick={nextPageNav} className='w-36 bg-[#61113a] text-white px-7 py-2 rounded shadow-lg hover:bg-[#8a1853] hover:-translate-y-2 transform duration-200'>Start</button>
                         </div>
                     </div>
                 </div>

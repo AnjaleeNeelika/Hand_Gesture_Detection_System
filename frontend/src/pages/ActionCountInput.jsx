@@ -1,22 +1,10 @@
 import { React, useState, useEffect, useRef } from 'react';
 import Button2 from '../assets/components/Button2';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-
+import { Link, useSearchParams } from 'react-router-dom';
 
 const ActionCountInput = () => {
-    const [videoSrc, setVideoSrc] = useState(null);
-
-    useEffect(() => {
-        import("../assets/videos/sample-vid.mp4")
-            .then((module) => {
-                setVideoSrc(module.default);
-            })
-            .catch((error) => {
-                console.error("Error loading video:", error);
-            });
-    }, []);
-
+    const [searchParams] = useSearchParams();
+    console.log(searchParams.get("type"));
 
     return (
 
