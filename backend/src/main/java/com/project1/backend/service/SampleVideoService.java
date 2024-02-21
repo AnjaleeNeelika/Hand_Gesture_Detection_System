@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class SampleVideoService {
@@ -18,5 +19,9 @@ public class SampleVideoService {
         SampleVideo video = new SampleVideo();
         video.setFilePath(filePath);
         return sampleVideoRepository.save(video);
+    }
+
+    public Optional<SampleVideo> getVideoById(String id) {
+        return sampleVideoRepository.findById(id);
     }
 }

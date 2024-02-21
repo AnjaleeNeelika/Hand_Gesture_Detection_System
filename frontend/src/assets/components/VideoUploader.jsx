@@ -7,9 +7,9 @@ import { MdCloudUpload, MdDelete } from 'react-icons/md';
 
 const BASE_URL = 'http://localhost:8080';
 
+
 const apiService = {
     uploadVideo: async (file, description) => {
-        console.log("hiiiiiiiiiiiiii");
         const formData = new FormData();
         formData.append('file', file);
         formData.append('description', description);
@@ -20,8 +20,10 @@ const apiService = {
                     'Content-Type': 'multipart/form-data',
                 },
             });
-            console.log("hiiiiiiiiiiiiii");
-            return response.data;
+            console.log(response.data)
+            const id = response.data;
+            console.log(id);
+            return id;
         } catch (error) {
             console.error('Error uploading video:', error);
             throw error;
@@ -29,10 +31,14 @@ const apiService = {
     },
 };
 
-const VideoUploader = () => {
+
+
+const VideoUploader = ({ onVideoUpload }) => {
+
     const [file, setFile] = useState(null);
     const [description, setDescription] = useState('');
     const [video, setVideo] = useState(null);
+    const [id, setId] = useState(null);
     const [fileName, setFileName] = useState("No file selected");
 
     const handleFileChange = (event) => {
@@ -52,8 +58,12 @@ const VideoUploader = () => {
         event.preventDefault();
         console.log("Before calling uploadVideo function");
         try {
-            await apiService.uploadVideo(file, description);
-            alert('Video uploaded successfully!');
+            const id = await apiService.uploadVideo(file, description);
+            console.log('Uploaded video id:', id);
+            onVideoUpload(id);
+            setId(id);
+            alert(`Video uploaded successfully with ID: ${id}`);
+
             // Redirect or do something else after successful upload
         } catch (error) {
             alert('Failed to upload video. Please try again.');
