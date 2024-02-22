@@ -1,19 +1,16 @@
 import { React, useState } from 'react';
 import { BsFillArrowLeftCircleFill } from 'react-icons/bs';
-import { Link } from 'react-router-dom';
+import { Link, createSearchParams, useNavigate } from 'react-router-dom';
 import VideoUploader from '../assets/components/VideoUploader';
 import Button2 from '../assets/components/Button2';
 
 const UploadVideo = () => {
-
     const [videoId, setVideoId] = useState(null);
 
     const handleUploadSuccess = (uploadedId) => {
         setVideoId(uploadedId);
         console.log("Video ID:", uploadedId);
     };
-
-
 
     return (
         <div className='w-full h-full relative p-5'>
