@@ -1,21 +1,21 @@
-package com.project1.backend;
+package com.project1.backend.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "user")
+@Document(collection = "videos")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class User {
+public class SampleVideo {
+
+
     @Id
-    private ObjectId id;
-    private String name;
-    private String email;
-    private String password;
-    private String confirm_pass;
+    private String id;
+    private String filePath;
+
+
 }
