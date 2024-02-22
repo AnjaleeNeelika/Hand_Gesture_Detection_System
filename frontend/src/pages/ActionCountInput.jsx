@@ -8,6 +8,7 @@ const BASE_URL = 'http://localhost:8080';
 const ActionCountInput = () => {
     const [videoSrc, setVideoSrc] = useState(null);
     const [error, setError] = useState(null);
+    const [fileName, setFileName] = useState(null);
 
     useEffect(() => {
         const currentURL = window.location.href;
@@ -18,8 +19,11 @@ const ActionCountInput = () => {
         axios.get(`${BASE_URL}/videos/view-fulldetect/${id}`)
             .then(response => {
                 const filePath = response.data.filePath;
+                const parts = filePath.split('\\'); // Split by backslash
+                const fileName = parts.pop(); // Get the last part (the file name)
+
+                setFileName(fileName); // Update fileName state
                 setVideoSrc(filePath);
-                console.log(filePath)
             })
             .catch(error => {
                 setError(error.message);
@@ -30,6 +34,8 @@ const ActionCountInput = () => {
     if (error) {
         return <div>Error: {error}</div>;
     }
+
+    console.log(fileName);
 
     return (
         <div className='h-full p-5 flex flex-col justify-center items-center'>
@@ -42,11 +48,12 @@ const ActionCountInput = () => {
                             <source src={videoSrc} type="video/mp4" />
                         </video>
                     )} */}
-                    <video className="w-auto h-full" autoPlay loop controls muted>
-                        <source
-                            src="E:\UCSC\intern-handproject\videos\sample-vid-10.mp4"
-                            type="video/mp4" />
-                    </video>
+                    {fileName && (
+                        <video className="w-auto h-full shadow-lg" autoPlay loop controls muted>
+                            <source src={`/videos/${fileName}`} type="video/mp4" />
+                        </video>
+                    )}
+
                 </div>
                 {/* Right Side - Form */}
                 <div className='w-1/2 mr-2 flex items-center justify-center'>

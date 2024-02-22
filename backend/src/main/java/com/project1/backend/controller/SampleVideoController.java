@@ -34,7 +34,13 @@ public class SampleVideoController {
     @PostMapping("/upload")
     public ResponseEntity<String> uploadVideo(@RequestParam("file") MultipartFile file) {
         try {
-            String uploadDirectory = "E:/UCSC/intern-handproject/videos"; // Change this to your desired directory
+            String projectDirectory = System.getProperty("user.dir");
+            // Navigate one level up in the directory hierarchy
+            Path parentDirectory = Paths.get(projectDirectory).getParent();
+
+            String directory = parentDirectory.toString();
+            // Define the directory where you want to save the video
+            String uploadDirectory = directory + "/frontend/public/videos";
 
             // Create the directory if it doesn't exist
             Files.createDirectories(Paths.get(uploadDirectory));

@@ -36,7 +36,7 @@ const ThresholdValue = () => {
                 <div className='min-w-[300px] w-[800px] h-fit bg-white shadow-lg'>
                     <video className="w-auto h-full" autoPlay loop controls muted>
                         <source
-                            src="https://tecdn.b-cdn.net/img/video/Sail-Away.mp4"
+                            src="/videos/sample-vid-8.mp4"
                             type="video/mp4" />
                     </video>
                 </div>
@@ -164,7 +164,7 @@ const ThresholdValue = () => {
                                 </div>
                             </div>
                         </div>
-                        
+
                         <div className='flex justify-center mt-4'>
                             <button className='bg-[#85586f] w-1/3 text-center py-2 px-5 rounded text-[#ffefef] hover:bg-[#8b6d7d] hover:-translate-y-1 transform duration-200'>Submit</button>
                         </div>
