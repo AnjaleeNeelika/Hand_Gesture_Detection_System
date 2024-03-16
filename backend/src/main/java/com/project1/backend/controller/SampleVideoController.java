@@ -10,7 +10,6 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
-import java.io.File;
 import java.io.IOException;
 
 
@@ -18,9 +17,6 @@ import java.io.InputStreamReader;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
 import java.util.Optional;
 
 @RestController
@@ -101,13 +97,89 @@ public class SampleVideoController {
 //    }
 
 
+//    @GetMapping("/view-fulldetect/{id}")
+//    public ResponseEntity<SampleVideo> getVideoById(@PathVariable String id) {
+//        Optional<SampleVideo> videoOptional = sampleVideoService.getVideoById(id);
+//
+//        SampleVideo sampleVideo = videoOptional.get();
+//        String filePath = sampleVideo.getFilePath();
+//
+//
+//        // Run the Python script with the uploaded video file path as an argument
+//        String pythonScriptPath = "E:/UCSC/intern-handproject/ml_modules/fullydetect.py";
+//        String[] cmd = new String[3];
+//        cmd[0] = "python"; // Assuming Python is installed and added to the system's PATH
+//        cmd[1] = pythonScriptPath;
+//        cmd[2] = filePath.toString(); // Pass the video file path as an argument
+//        Process process = Runtime.getRuntime().exec(cmd);
+//        BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()));
+//        String line;
+//        while ((line = reader.readLine()) != null) {
+//            System.out.println(line);
+//        }
+//        int exitCode = process.waitFor();
+//        System.out.println("Python script exit code: " + exitCode);
+//
+//        return videoOptional
+//                .map(video -> new ResponseEntity<>(video, HttpStatus.OK))
+//                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+//    }
+
+
+
     @GetMapping("/view-fulldetect/{id}")
     public ResponseEntity<SampleVideo> getVideoById(@PathVariable String id) {
         Optional<SampleVideo> videoOptional = sampleVideoService.getVideoById(id);
-        return videoOptional
-                .map(video -> new ResponseEntity<>(video, HttpStatus.OK))
-                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+
+        if (videoOptional.isEmpty()) {
+            return ResponseEntity.notFound().build();
+        }
+
+        SampleVideo sampleVideo = videoOptional.get();
+        String filePath = sampleVideo.getFilePath();
+
+        try {
+            // Run the Python script with the uploaded video file path as an argument
+            String pythonScriptPath = "E:/UCSC/intern-handproject/ml_modules/fullydetect.py";
+            Process process = Runtime.getRuntime().exec(new String[]{"python", pythonScriptPath, filePath});
+
+            // Handle process output
+            try (BufferedReader reader = new BufferedReader(new InputStreamReader(process.getInputStream()))) {
+                String line;
+                while ((line = reader.readLine()) != null) {
+                    System.out.println(line); // You can process the output here
+                }
+            }
+
+            int exitCode = process.waitFor();
+            System.out.println("Python script exit code: " + exitCode);
+
+            return ResponseEntity.ok(sampleVideo);
+        } catch (IOException | InterruptedException e) {
+            e.printStackTrace();
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build();
+        }
     }
+
+
+
+
+
+//    @GetMapping("/view-fulldetect/{id}")
+//    public ResponseEntity<SampleVideo> getVideoById(@PathVariable String id) {
+//        Optional<SampleVideo> videoOptional = sampleVideoService.getVideoById(id);
+//        return videoOptional
+//                .map(video -> new ResponseEntity<>(video, HttpStatus.OK))
+//                .orElseGet(() -> new ResponseEntity<>(HttpStatus.NOT_FOUND));
+//    }
+
+
+
+
+
+
+
+
 
 
 }
